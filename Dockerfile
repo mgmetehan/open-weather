@@ -2,10 +2,10 @@ FROM openjdk:17-jdk-slim AS build
 
 COPY pom.xml mvnw ./
 COPY .mvn .mvn
-RUN ./mvn dependency:resolve
+RUN ./mvnw dependency:resolve
 
 COPY src src
-RUN ./mvn package
+RUN ./mvnw package
 
 FROM openjdk:17-jdk-slim
 WORKDIR open-weather
