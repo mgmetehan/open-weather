@@ -6,7 +6,7 @@ services:
     build:
       context: .
     ports:
-      - "9595-9597:8080"
+      - "9595-9597:8080" #!!! 9595, 9596, 9597 port'larinda 3 tane container olusturulacak
     deploy:
       mode: replicated
       replicas: 3
@@ -41,5 +41,5 @@ services:
       - GF_SERVER_DOMAIN=localhost
     networks:
       - open-weather-network
-networks:
+networks: #!!! promethus ve grafana icin ortak network olusturuluyor
   open-weather-network:

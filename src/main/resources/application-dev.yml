@@ -5,4 +5,4 @@ weather-stack:
 
 spring:
   config:
-    import: optional:file:.env[.properties]
+    import: optional:file:.env[.properties] #!!! .env dosyasi varsa okunacak

@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.NotBlank;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -21,15 +22,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/v1/api/open-weather")
+@RequiredArgsConstructor
 @Validated
 @Tag(name = "Open Weather Service API v1", description = "Open Weather Service API to search the current weather report of the city")
 public class WeatherController {
-
     private final WeatherService weatherService;
-
-    public WeatherController(WeatherService weatherService) {
-        this.weatherService = weatherService;
-    }
 
     @Operation(
             method = "GET",
@@ -66,5 +63,4 @@ public class WeatherController {
     public ResponseEntity<WeatherDto> getWeather(@PathVariable("city") @CityNameConstraint @NotBlank String city) {
         return ResponseEntity.ok(weatherService.getWeather(city));
     }
-
 }

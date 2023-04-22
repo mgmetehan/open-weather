@@ -30,7 +30,6 @@ You can define <b>WEATHER_STACK_API_KEY </b> in the `.env` file
 - Spring Boot 3.0
 - Open API Documentation
 - Spring Data JPA
-- Kotlin
 - H2 In Memory Database
 - Restful API
 - Maven

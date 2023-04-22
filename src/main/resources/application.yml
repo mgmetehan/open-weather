@@ -17,7 +17,7 @@ spring:
 resilience4j:
   ratelimiter:
     instances:
-      basic:
+      basic: #!!! bu isimle bean olusturulacak. Istedigimiz isim olabilir
         limit-for-period: 10
         limit-refresh-period: 1m
         timeout-duration: 10s
@@ -30,7 +30,7 @@ management:
           - prometheus
 weather-stack:
   api-url: http://api.weatherstack.com/current
-  api-key: ${WEATHER_STACK_API_KEY:default-key}
+  api-key: ${WEATHER_STACK_API_KEY:default-key} #!!! .env dosyasi varsa okunacak
   api-call-limit: 30
   cache-name: weathers
   cache-ttl: 10000
