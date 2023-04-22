@@ -104,7 +104,6 @@ public class WeatherService {
     private String getWeatherStackUrl(String city) {
         logger.info(WEATHER_STACK_API_BASE_URL + WEATHER_STACK_API_ACCESS_KEY_PARAM + API_KEY + WEATHER_STACK_API_QUERY_PARAM + city);
        return WEATHER_STACK_API_BASE_URL + WEATHER_STACK_API_ACCESS_KEY_PARAM + API_KEY + WEATHER_STACK_API_QUERY_PARAM + city;
-        // return WEATHER_STACK_API_BASE_URL + WEATHER_STACK_API_ACCESS_KEY_PARAM + "d8d2952de3c75457ef897a1831a646bb" + WEATHER_STACK_API_QUERY_PARAM + city;
     }
 
     private LocalDateTime getLocalDateTimeNow() {
